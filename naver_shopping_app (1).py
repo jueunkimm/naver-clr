@@ -211,7 +211,7 @@ if st.session_state.search_results:
                     with col3:
                         # 링크 버튼
                         if item.get('link'):
-                            st.link_button("🔗 상품 보기", item['link'])
+                            st.markdown(f"[🔗 상품 보기]({item['link']})")
                         
                         # 선택 버튼
                         if st.button(f"⭐ 선택", key=f"select_{idx}"):
@@ -259,7 +259,7 @@ if st.session_state.search_results:
                     
                     with col3:
                         if product.get('링크'):
-                            st.link_button("🔗 보기", product['링크'], key=f"link_{idx}")
+                            st.markdown(f"[🔗 보기]({product['링크']})")
                         
                         if st.button("🗑️ 삭제", key=f"delete_{idx}"):
                             st.session_state.selected_products.pop(idx)
